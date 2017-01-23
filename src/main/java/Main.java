@@ -25,7 +25,6 @@ public class Main {
 			port(8080);
 		}
 		staticFileLocation("/public");
-		Route x;
 		get("/", (req, res) -> "<a href=\"/exit\">Shutdown Server</a>");
 		get("/exit", (req, res) -> {
 			System.exit(0);
