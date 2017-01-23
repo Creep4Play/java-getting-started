@@ -25,16 +25,15 @@ public class Main {
 			port(8080);
 		}
 		staticFileLocation("/public");
-		get("/", (req, res) -> {
-			Map<String, Object> attributes = new HashMap<>();
-			attributes.put("message", "Hello World!");
-			return new ModelAndView(attributes, "custom.ftl");
-		}, new FreeMarkerEngine());
-		get("/exit", (req, res) -> {
-			System.exit(0);
-			return null;
-		});
-		/*
+//		get("/", (req, res) -> {
+//			Map<String, Object> attributes = new HashMap<>();
+//			attributes.put("message", "Hello World!");
+//			return new ModelAndView(attributes, "custom.ftl");
+//		}, new FreeMarkerEngine());
+//		get("/exit", (req, res) -> {
+//			System.exit(0);
+//			return null;
+//		});
 		get("/hello", (req, res) -> "Hello");
 
 		get("/", (request, response) -> {
@@ -43,7 +42,6 @@ public class Main {
 
 			return new ModelAndView(attributes, "index.ftl");
 		}, new FreeMarkerEngine());
-*/
 		get("/db", (req, res) -> {
 			Connection connection = null;
 			Map<String, Object> attributes = new HashMap<>();
